@@ -1,0 +1,21 @@
+module New_Hex_HELO(Hex, C);
+
+	input [2:0] C;
+	output logic [0:6] Hex = 3'b111;
+	
+	
+	assign C[0] = A;
+	assign C[1] = B;
+	assign C[2] = C;
+	
+	Hex[0] = ~A | ~C;
+	Hex[1] = ~A | (~B&C) | (B&~C);
+	Hex[2] = ~A | (B&~C) | (B&~C)
+	Hex[3] = ~A | (~B&~C);
+	Hex[4] = ~A;
+	Hex[5] = ~A;
+	Hex[6] = ~A | B;
+
+endmodule
+
+

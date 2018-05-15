@@ -1,0 +1,91 @@
+//Matthew Skipworth
+//TCES330, Friday Section
+
+//Part3FSM module
+module Part3FSM(Clock, Reset, Out);
+	
+	input Clock, Reset;
+	output logic [3:0] Out = 0;
+	
+	logic [3:0] currentState, nextState;
+	
+	integer counter = 0;
+	
+	localparam  H = 4'b0000,
+				E = 4'b0001,
+				L = 4'b0010,
+				O = 4'b0011,
+				Blank = 4'b0100;
+				
+	always_comb begin
+		case(counter)
+		/*0: nextState = H;
+		1: nextState = E;
+		2: nextState = L;
+		3: nextState = L;
+		4: nextState = O;
+		5: nextState = Blank;
+		6: nextState = Blank;
+		7: nextState = Blank;
+		*/
+		0: if (!Reset) nextState = H;
+			else nextState = Blank;
+		1: if (!Reset) nextState = E;
+			else nextState = Blank;
+		2: if (!Reset) nextState = L;
+			else nextState = Blank;
+		3: if (!Reset) nextState = L;
+			else nextState = Blank;
+		4: if (!Reset) nextState = O;
+			else nextState = Blank;
+		5: if (!Reset) nextState = Blank;
+			else nextState = Blank;
+		6: if (!Reset) nextState = Blank;
+			else nextState = Blank;
+		7: if (!Reset) nextState = Blank;
+			else nextState = Blank;
+			default  nextState = Blank;
+		
+		endcase
+	end
+	
+	always_ff @(posedge Clock)begin
+		if (Reset) begin
+			counter <= 0;
+			//currentState <= H;
+			Out <= H;
+		end else begin
+			if (counter < 8) begin
+				currentState <= nextState; 
+				counter++;
+				Out <= currentState;
+			end else begin
+				counter = 0;
+			end
+		end
+	end
+		
+endmodule
+
+module Part3FSM_testbench;
+
+	logic Clock, Reset;
+	logic [3:0] Out = 0;
+	
+	integer j;
+	
+	Part3FSM DUT(Clock, Reset, Out);
+	
+	initial begin
+		Reset = 0;
+		
+		for (j = 0; j < 16; j++) begin
+			Clock = 1;
+			#10;
+			Clock = 0;
+			#10;
+			$monitor("%4b", Out);
+		end
+	end
+endmodule
+	

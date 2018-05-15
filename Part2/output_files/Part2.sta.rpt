@@ -1,0 +1,966 @@
+TimeQuest Timing Analyzer report for Part2
+Fri May 11 12:13:01 2018
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow 1200mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1200mV 85C Model Setup Summary
+  9. Slow 1200mV 85C Model Hold Summary
+ 10. Slow 1200mV 85C Model Recovery Summary
+ 11. Slow 1200mV 85C Model Removal Summary
+ 12. Slow 1200mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1200mV 85C Model Setup: 'SickestClockKnownToMan'
+ 14. Slow 1200mV 85C Model Hold: 'SickestClockKnownToMan'
+ 15. Slow 1200mV 85C Model Metastability Summary
+ 16. Slow 1200mV 0C Model Fmax Summary
+ 17. Slow 1200mV 0C Model Setup Summary
+ 18. Slow 1200mV 0C Model Hold Summary
+ 19. Slow 1200mV 0C Model Recovery Summary
+ 20. Slow 1200mV 0C Model Removal Summary
+ 21. Slow 1200mV 0C Model Minimum Pulse Width Summary
+ 22. Slow 1200mV 0C Model Setup: 'SickestClockKnownToMan'
+ 23. Slow 1200mV 0C Model Hold: 'SickestClockKnownToMan'
+ 24. Slow 1200mV 0C Model Metastability Summary
+ 25. Fast 1200mV 0C Model Setup Summary
+ 26. Fast 1200mV 0C Model Hold Summary
+ 27. Fast 1200mV 0C Model Recovery Summary
+ 28. Fast 1200mV 0C Model Removal Summary
+ 29. Fast 1200mV 0C Model Minimum Pulse Width Summary
+ 30. Fast 1200mV 0C Model Setup: 'SickestClockKnownToMan'
+ 31. Fast 1200mV 0C Model Hold: 'SickestClockKnownToMan'
+ 32. Fast 1200mV 0C Model Metastability Summary
+ 33. Multicorner Timing Analysis Summary
+ 34. Board Trace Model Assignments
+ 35. Input Transition Times
+ 36. Signal Integrity Metrics (Slow 1200mv 0c Model)
+ 37. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 38. Signal Integrity Metrics (Fast 1200mv 0c Model)
+ 39. Setup Transfers
+ 40. Hold Transfers
+ 41. Report TCCS
+ 42. Report RSKM
+ 43. Unconstrained Paths Summary
+ 44. Clock Status Summary
+ 45. Unconstrained Input Ports
+ 46. Unconstrained Output Ports
+ 47. Unconstrained Input Ports
+ 48. Unconstrained Output Ports
+ 49. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Intel and sold by Intel or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
+; Revision Name         ; Part2                                               ;
+; Device Family         ; Cyclone IV E                                        ;
+; Device Name           ; EP4CE115F29C7                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.4%      ;
+;     Processors 3-4         ;   0.2%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; Part2.out.sdc ; OK     ; Fri May 11 12:12:59 2018 ;
++---------------+--------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                         ;
++------------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name             ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; SickestClockKnownToMan ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { KEY[0] } ;
++------------------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                                                                                    ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                                          ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; 309.79 MHz ; 250.0 MHz       ; SickestClockKnownToMan ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary             ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; SickestClockKnownToMan ; 16.772 ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary             ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; SickestClockKnownToMan ; 0.440 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+------------------------------------------
+; Slow 1200mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1200mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++---------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary ;
++------------------------+-------+------------------+
+; Clock                  ; Slack ; End Point TNS    ;
++------------------------+-------+------------------+
+; SickestClockKnownToMan ; 9.762 ; 0.000            ;
++------------------------+-------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup: 'SickestClockKnownToMan'                                                                                                                                           ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 16.772 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 3.197      ;
+; 17.034 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.935      ;
+; 17.038 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.931      ;
+; 17.070 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.899      ;
+; 17.211 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.758      ;
+; 17.277 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.692      ;
+; 17.280 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.689      ;
+; 17.304 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.665      ;
+; 17.389 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.580      ;
+; 17.430 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.539      ;
+; 17.462 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.507      ;
+; 17.467 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.502      ;
+; 17.468 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.501      ;
+; 17.471 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.498      ;
+; 17.597 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.372      ;
+; 17.606 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.363      ;
+; 17.609 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.360      ;
+; 17.627 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.342      ;
+; 17.672 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.297      ;
+; 17.716 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.253      ;
+; 17.752 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.217      ;
+; 17.785 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.184      ;
+; 17.808 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.161      ;
+; 17.821 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.148      ;
+; 17.873 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.096      ;
+; 17.944 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.025      ;
+; 17.945 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.024      ;
+; 17.957 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.012      ;
+; 17.968 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 2.001      ;
+; 17.971 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.998      ;
+; 17.985 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.984      ;
+; 18.028 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.941      ;
+; 18.112 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.857      ;
+; 18.139 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.830      ;
+; 18.195 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.774      ;
+; 18.197 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.772      ;
+; 18.200 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.769      ;
+; 18.211 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.758      ;
+; 18.242 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.727      ;
+; 18.279 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.690      ;
+; 18.298 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.671      ;
+; 18.479 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.490      ;
+; 18.486 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.483      ;
+; 18.521 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.448      ;
+; 18.719 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.250      ;
+; 18.786 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.183      ;
+; 18.787 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.182      ;
+; 18.789 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.180      ;
+; 18.833 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.136      ;
+; 18.833 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.136      ;
+; 18.847 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.122      ;
+; 18.862 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 1.107      ;
+; 19.143 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.049     ; 0.826      ;
+; 19.241 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.043     ; 0.734      ;
+; 19.241 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.043     ; 0.734      ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold: 'SickestClockKnownToMan'                                                                                                                                           ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 0.440 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.043      ; 0.669      ;
+; 0.493 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 0.728      ;
+; 0.750 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 0.985      ;
+; 0.767 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.002      ;
+; 0.773 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.008      ;
+; 0.788 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.023      ;
+; 0.789 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.024      ;
+; 0.806 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.041      ;
+; 0.858 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.093      ;
+; 0.913 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.148      ;
+; 1.052 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.287      ;
+; 1.119 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.354      ;
+; 1.124 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.359      ;
+; 1.245 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.480      ;
+; 1.262 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.497      ;
+; 1.361 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.596      ;
+; 1.367 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.602      ;
+; 1.371 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.606      ;
+; 1.378 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.613      ;
+; 1.400 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.635      ;
+; 1.422 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.657      ;
+; 1.466 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.701      ;
+; 1.554 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.789      ;
+; 1.602 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.837      ;
+; 1.608 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.843      ;
+; 1.612 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.847      ;
+; 1.635 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.870      ;
+; 1.640 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.875      ;
+; 1.654 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.889      ;
+; 1.709 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.944      ;
+; 1.744 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.979      ;
+; 1.744 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 1.979      ;
+; 1.778 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.013      ;
+; 1.806 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.041      ;
+; 1.809 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.044      ;
+; 1.891 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.126      ;
+; 1.917 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.152      ;
+; 1.935 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.170      ;
+; 1.947 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.182      ;
+; 2.017 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.252      ;
+; 2.018 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.253      ;
+; 2.044 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.279      ;
+; 2.061 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.296      ;
+; 2.101 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.336      ;
+; 2.107 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.342      ;
+; 2.193 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.428      ;
+; 2.195 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.430      ;
+; 2.219 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.454      ;
+; 2.233 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.468      ;
+; 2.403 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.638      ;
+; 2.456 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.691      ;
+; 2.497 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.732      ;
+; 2.547 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.782      ;
+; 2.705 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.049      ; 2.940      ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
+-----------------------------------------------
+; Slow 1200mV 85C Model Metastability Summary ;
+-----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Fmax Summary                                                                                     ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name             ; Note                                                          ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+; 334.34 MHz ; 250.0 MHz       ; SickestClockKnownToMan ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary              ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; SickestClockKnownToMan ; 17.009 ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary              ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; SickestClockKnownToMan ; 0.387 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Slow 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------------+-------+-----------------+
+; Clock                  ; Slack ; End Point TNS   ;
++------------------------+-------+-----------------+
+; SickestClockKnownToMan ; 9.774 ; 0.000           ;
++------------------------+-------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup: 'SickestClockKnownToMan'                                                                                                                                            ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 17.009 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.965      ;
+; 17.221 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.753      ;
+; 17.224 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.750      ;
+; 17.323 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.651      ;
+; 17.421 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.553      ;
+; 17.545 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.429      ;
+; 17.546 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.428      ;
+; 17.558 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.416      ;
+; 17.569 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.405      ;
+; 17.645 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.329      ;
+; 17.663 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.311      ;
+; 17.667 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.307      ;
+; 17.692 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.282      ;
+; 17.712 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.262      ;
+; 17.794 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.180      ;
+; 17.819 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.155      ;
+; 17.830 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.144      ;
+; 17.856 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.118      ;
+; 17.877 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.097      ;
+; 17.909 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.065      ;
+; 17.950 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 2.024      ;
+; 18.023 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.951      ;
+; 18.024 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.950      ;
+; 18.025 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.949      ;
+; 18.048 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.926      ;
+; 18.095 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.879      ;
+; 18.114 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.860      ;
+; 18.134 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.840      ;
+; 18.147 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.827      ;
+; 18.162 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.812      ;
+; 18.167 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.807      ;
+; 18.201 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.773      ;
+; 18.293 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.681      ;
+; 18.315 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.659      ;
+; 18.332 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.642      ;
+; 18.335 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.639      ;
+; 18.362 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.612      ;
+; 18.378 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.596      ;
+; 18.399 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.575      ;
+; 18.452 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.522      ;
+; 18.469 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.505      ;
+; 18.635 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.339      ;
+; 18.641 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.333      ;
+; 18.679 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.295      ;
+; 18.854 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.120      ;
+; 18.902 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.072      ;
+; 18.910 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.064      ;
+; 18.914 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.060      ;
+; 18.953 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.021      ;
+; 18.959 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.015      ;
+; 18.970 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 1.004      ;
+; 18.979 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 0.995      ;
+; 19.230 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.045     ; 0.744      ;
+; 19.321 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.039     ; 0.659      ;
+; 19.321 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.039     ; 0.659      ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold: 'SickestClockKnownToMan'                                                                                                                                            ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 0.387 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.039      ; 0.597      ;
+; 0.452 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.668      ;
+; 0.687 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.903      ;
+; 0.697 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.913      ;
+; 0.707 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.923      ;
+; 0.715 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.931      ;
+; 0.732 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.948      ;
+; 0.734 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 0.950      ;
+; 0.794 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.010      ;
+; 0.829 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.045      ;
+; 0.956 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.172      ;
+; 1.028 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.244      ;
+; 1.044 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.260      ;
+; 1.142 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.358      ;
+; 1.155 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.371      ;
+; 1.213 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.429      ;
+; 1.234 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.450      ;
+; 1.246 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.462      ;
+; 1.258 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.474      ;
+; 1.261 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.477      ;
+; 1.279 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.495      ;
+; 1.316 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.532      ;
+; 1.426 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.642      ;
+; 1.427 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.643      ;
+; 1.428 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.644      ;
+; 1.452 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.668      ;
+; 1.459 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.675      ;
+; 1.461 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.677      ;
+; 1.518 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.734      ;
+; 1.533 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.749      ;
+; 1.576 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.792      ;
+; 1.596 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.812      ;
+; 1.596 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.812      ;
+; 1.604 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.820      ;
+; 1.625 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.841      ;
+; 1.688 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.904      ;
+; 1.759 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.975      ;
+; 1.765 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.981      ;
+; 1.768 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 1.984      ;
+; 1.791 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.007      ;
+; 1.831 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.047      ;
+; 1.875 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.091      ;
+; 1.883 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.099      ;
+; 1.884 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.100      ;
+; 1.911 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.127      ;
+; 1.993 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.209      ;
+; 2.006 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.222      ;
+; 2.012 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.228      ;
+; 2.030 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.246      ;
+; 2.171 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.387      ;
+; 2.227 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.443      ;
+; 2.235 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.451      ;
+; 2.274 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.490      ;
+; 2.414 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.045      ; 2.630      ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Slow 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary              ;
++------------------------+--------+---------------+
+; Clock                  ; Slack  ; End Point TNS ;
++------------------------+--------+---------------+
+; SickestClockKnownToMan ; 18.414 ; 0.000         ;
++------------------------+--------+---------------+
+
+
++------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary              ;
++------------------------+-------+---------------+
+; Clock                  ; Slack ; End Point TNS ;
++------------------------+-------+---------------+
+; SickestClockKnownToMan ; 0.201 ; 0.000         ;
++------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1200mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1200mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++--------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary ;
++------------------------+-------+-----------------+
+; Clock                  ; Slack ; End Point TNS   ;
++------------------------+-------+-----------------+
+; SickestClockKnownToMan ; 9.413 ; 0.000           ;
++------------------------+-------+-----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup: 'SickestClockKnownToMan'                                                                                                                                            ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 18.414 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.568      ;
+; 18.556 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.426      ;
+; 18.564 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.418      ;
+; 18.574 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.408      ;
+; 18.640 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.342      ;
+; 18.681 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.301      ;
+; 18.711 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.271      ;
+; 18.721 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.261      ;
+; 18.737 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.245      ;
+; 18.738 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.244      ;
+; 18.764 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.218      ;
+; 18.778 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.204      ;
+; 18.790 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.192      ;
+; 18.812 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.170      ;
+; 18.825 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.157      ;
+; 18.843 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.139      ;
+; 18.850 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.132      ;
+; 18.853 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.129      ;
+; 18.866 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.116      ;
+; 18.877 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.105      ;
+; 18.880 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.102      ;
+; 18.916 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.066      ;
+; 18.920 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.062      ;
+; 18.924 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.058      ;
+; 18.969 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.013      ;
+; 18.977 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 1.005      ;
+; 18.987 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.995      ;
+; 18.995 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.987      ;
+; 19.000 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.982      ;
+; 19.014 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.968      ;
+; 19.019 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.963      ;
+; 19.022 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.960      ;
+; 19.070 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.912      ;
+; 19.101 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.881      ;
+; 19.114 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.868      ;
+; 19.122 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.860      ;
+; 19.150 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.832      ;
+; 19.156 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.826      ;
+; 19.173 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.809      ;
+; 19.184 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.798      ;
+; 19.188 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.794      ;
+; 19.266 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.716      ;
+; 19.267 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.715      ;
+; 19.294 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.688      ;
+; 19.386 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.596      ;
+; 19.411 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.571      ;
+; 19.414 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.568      ;
+; 19.415 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.567      ;
+; 19.435 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.547      ;
+; 19.438 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.544      ;
+; 19.448 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.534      ;
+; 19.454 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.528      ;
+; 19.588 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.025     ; 0.394      ;
+; 19.635 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.022     ; 0.350      ;
+; 19.635 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 20.000       ; -0.022     ; 0.350      ;
++--------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold: 'SickestClockKnownToMan'                                                                                                                                            ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock           ; Latch Clock            ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+; 0.201 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.022      ; 0.307      ;
+; 0.223 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.332      ;
+; 0.345 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.454      ;
+; 0.348 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.457      ;
+; 0.356 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[3]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.465      ;
+; 0.359 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.468      ;
+; 0.360 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.469      ;
+; 0.376 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.485      ;
+; 0.384 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.493      ;
+; 0.410 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.519      ;
+; 0.486 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.595      ;
+; 0.500 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.609      ;
+; 0.511 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.620      ;
+; 0.571 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.680      ;
+; 0.582 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[2]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.691      ;
+; 0.628 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.737      ;
+; 0.631 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.740      ;
+; 0.632 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.741      ;
+; 0.639 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.748      ;
+; 0.649 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.758      ;
+; 0.655 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.764      ;
+; 0.656 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.765      ;
+; 0.699 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.808      ;
+; 0.720 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.829      ;
+; 0.721 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.830      ;
+; 0.721 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.830      ;
+; 0.725 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.834      ;
+; 0.732 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|z[0]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.841      ;
+; 0.737 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.846      ;
+; 0.769 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.878      ;
+; 0.781 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.890      ;
+; 0.785 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.894      ;
+; 0.790 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.899      ;
+; 0.812 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.921      ;
+; 0.817 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.926      ;
+; 0.848 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|z[1]           ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.957      ;
+; 0.854 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.963      ;
+; 0.856 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.965      ;
+; 0.868 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.B ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 0.977      ;
+; 0.896 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.005      ;
+; 0.913 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.022      ;
+; 0.917 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.026      ;
+; 0.924 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.033      ;
+; 0.935 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.I ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.044      ;
+; 0.952 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.061      ;
+; 0.985 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.H ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.094      ;
+; 0.989 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.C ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.098      ;
+; 0.996 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.105      ;
+; 1.004 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.J ; Mod_Ten_Counter:SirCountsAlot|CurrentState.A ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.113      ;
+; 1.063 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.172      ;
+; 1.085 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; Mod_Ten_Counter:SirCountsAlot|CurrentState.G ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.194      ;
+; 1.113 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.F ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.222      ;
+; 1.134 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.D ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.243      ;
+; 1.195 ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; Mod_Ten_Counter:SirCountsAlot|CurrentState.E ; SickestClockKnownToMan ; SickestClockKnownToMan ; 0.000        ; 0.025      ; 1.304      ;
++-------+----------------------------------------------+----------------------------------------------+------------------------+------------------------+--------------+------------+------------+
+
+
+----------------------------------------------
+; Fast 1200mV 0C Model Metastability Summary ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                 ;
++-------------------------+--------+-------+----------+---------+---------------------+
+; Clock                   ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-------------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack        ; 16.772 ; 0.201 ; N/A      ; N/A     ; 9.413               ;
+;  SickestClockKnownToMan ; 16.772 ; 0.201 ; N/A      ; N/A     ; 9.413               ;
+; Design-wide TNS         ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  SickestClockKnownToMan ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++-------------------------+--------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; HEX0[6]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[5]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[4]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[3]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HEX0[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[0]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[1]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; LEDR[2]       ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; SW[0]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[1]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; SW[2]                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[0]                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.33 V              ; -0.00496 V          ; 0.223 V                              ; 0.086 V                              ; 2.9e-09 s                   ; 2.73e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.33 V             ; -0.00496 V         ; 0.223 V                             ; 0.086 V                             ; 2.9e-09 s                  ; 2.73e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-09 V                   ; 2.38 V              ; -0.0144 V           ; 0.227 V                              ; 0.024 V                              ; 3.14e-10 s                  ; 3.39e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.07e-09 V                  ; 2.38 V             ; -0.0144 V          ; 0.227 V                             ; 0.024 V                             ; 3.14e-10 s                 ; 3.39e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.33 V              ; -0.00467 V          ; 0.226 V                              ; 0.087 V                              ; 2.91e-09 s                  ; 2.74e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.33 V             ; -0.00467 V         ; 0.226 V                             ; 0.087 V                             ; 2.91e-09 s                 ; 2.74e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.49e-09 V                   ; 2.38 V              ; -0.00552 V          ; 0.096 V                              ; 0.019 V                              ; 4.18e-10 s                  ; 3.59e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 4.49e-09 V                  ; 2.38 V             ; -0.00552 V         ; 0.096 V                             ; 0.019 V                             ; 4.18e-10 s                 ; 3.59e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.67e-09 V                   ; 2.38 V              ; -0.0485 V           ; 0.167 V                              ; 0.096 V                              ; 2.95e-10 s                  ; 2.73e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.67e-09 V                  ; 2.38 V             ; -0.0485 V          ; 0.167 V                             ; 0.096 V                             ; 2.95e-10 s                 ; 2.73e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.18e-09 V                   ; 2.38 V              ; -0.00483 V          ; 0.152 V                              ; 0.012 V                              ; 4.81e-10 s                  ; 6.29e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.18e-09 V                  ; 2.38 V             ; -0.00483 V         ; 0.152 V                             ; 0.012 V                             ; 4.81e-10 s                 ; 6.29e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.33 V              ; -0.00269 V          ; 0.13 V                               ; 0.055 V                              ; 3.54e-09 s                  ; 3.29e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.33 V             ; -0.00269 V         ; 0.13 V                              ; 0.055 V                             ; 3.54e-09 s                 ; 3.29e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; HEX0[6]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[5]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.64 V              ; -0.0117 V           ; 0.202 V                              ; 0.176 V                              ; 2.38e-09 s                  ; 2.22e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.64 V             ; -0.0117 V          ; 0.202 V                             ; 0.176 V                             ; 2.38e-09 s                 ; 2.22e-09 s                 ; No                        ; Yes                       ;
+; HEX0[4]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[3]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.74e-08 V                   ; 2.73 V              ; -0.0384 V           ; 0.169 V                              ; 0.089 V                              ; 2.7e-10 s                   ; 2.62e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.74e-08 V                  ; 2.73 V             ; -0.0384 V          ; 0.169 V                             ; 0.089 V                             ; 2.7e-10 s                  ; 2.62e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; HEX0[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.64 V              ; -0.0113 V           ; 0.208 V                              ; 0.179 V                              ; 2.38e-09 s                  ; 2.23e-09 s                  ; No                         ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.64 V             ; -0.0113 V          ; 0.208 V                             ; 0.179 V                             ; 2.38e-09 s                 ; 2.23e-09 s                 ; No                        ; Yes                       ;
+; HEX0[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[0]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[1]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; LEDR[2]       ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 4.05e-08 V                   ; 2.72 V              ; -0.0349 V           ; 0.173 V                              ; 0.1 V                                ; 2.72e-10 s                  ; 2.69e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 4.05e-08 V                  ; 2.72 V             ; -0.0349 V          ; 0.173 V                             ; 0.1 V                               ; 2.72e-10 s                 ; 2.69e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.22e-08 V                   ; 2.74 V              ; -0.06 V             ; 0.158 V                              ; 0.08 V                               ; 2.68e-10 s                  ; 2.19e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.22e-08 V                  ; 2.74 V             ; -0.06 V            ; 0.158 V                             ; 0.08 V                              ; 2.68e-10 s                 ; 2.19e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.54e-08 V                   ; 2.7 V               ; -0.00943 V          ; 0.276 V                              ; 0.035 V                              ; 3.19e-10 s                  ; 4.99e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 3.54e-08 V                  ; 2.7 V              ; -0.00943 V         ; 0.276 V                             ; 0.035 V                             ; 3.19e-10 s                 ; 4.99e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                             ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; SickestClockKnownToMan ; SickestClockKnownToMan ; 55       ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                              ;
++------------------------+------------------------+----------+----------+----------+----------+
+; From Clock             ; To Clock               ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------+------------------------+----------+----------+----------+----------+
+; SickestClockKnownToMan ; SickestClockKnownToMan ; 55       ; 0        ; 0        ; 0        ;
++------------------------+------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 37    ; 37   ;
+; Unconstrained Output Ports      ; 10    ; 10   ;
+; Unconstrained Output Port Paths ; 31    ; 31   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------+
+; Clock Status Summary                                 ;
++--------+------------------------+------+-------------+
+; Target ; Clock                  ; Type ; Status      ;
++--------+------------------------+------+-------------+
+; KEY[0] ; SickestClockKnownToMan ; Base ; Constrained ;
++--------+------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; SW[0]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[1]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SW[2]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; HEX0[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[3]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[4]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; HEX0[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Fri May 11 12:12:57 2018
+Info: Command: quartus_sta Part2 -c Part2
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (332104): Reading SDC File: 'Part2.out.sdc'
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From SickestClockKnownToMan (Rise) to SickestClockKnownToMan (Rise) (setup)
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 85C Model
+Info (332146): Worst-case setup slack is 16.772
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    16.772               0.000 SickestClockKnownToMan 
+Info (332146): Worst-case hold slack is 0.440
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.440               0.000 SickestClockKnownToMan 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.762
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.762               0.000 SickestClockKnownToMan 
+Info: Analyzing Slow 1200mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From SickestClockKnownToMan (Rise) to SickestClockKnownToMan (Rise) (setup)
+Info (332146): Worst-case setup slack is 17.009
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    17.009               0.000 SickestClockKnownToMan 
+Info (332146): Worst-case hold slack is 0.387
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.387               0.000 SickestClockKnownToMan 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.774
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.774               0.000 SickestClockKnownToMan 
+Info: Analyzing Fast 1200mV 0C Model
+Critical Warning (332168): The following clock transfers have no clock uncertainty assignment. For more accurate results, apply clock uncertainty assignments or use the derive_clock_uncertainty command.
+    Critical Warning (332169): From SickestClockKnownToMan (Rise) to SickestClockKnownToMan (Rise) (setup)
+Info (332146): Worst-case setup slack is 18.414
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    18.414               0.000 SickestClockKnownToMan 
+Info (332146): Worst-case hold slack is 0.201
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.201               0.000 SickestClockKnownToMan 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.413
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     9.413               0.000 SickestClockKnownToMan 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 775 megabytes
+    Info: Processing ended: Fri May 11 12:13:01 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
+
+

@@ -1,0 +1,35 @@
+module Part4(CLOCK_50, KEY, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7);
+
+	input CLOCK_50, [0:0] KEY;
+	output HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
+
+	logic outclock;
+	logic[23:0] Q;
+	logic[2:0] Out;
+	
+	KHzClock(CLOCK_50, outclock);
+
+	
+	Part3FSM FSM1(outclock, KEY, Out);
+	
+	Four_Bit_Register R0(Out, KEY, SW, Q[2:0]);
+	Four_Bit_Register R1(Q[2:0], KEY, SW, Q[5:3]);
+	Four_Bit_Register R2(Q[5:3], KEY, SW, Q[8:6]);
+	Four_Bit_Register R3(Q[8:6], KEY, SW, Q[11:9]);
+	Four_Bit_Register R4(Q[11:9], KEY, SW, Q[14:12]);
+	Four_Bit_Register R5(Q[14:12], KEY, SW, Q[17:15]);
+	Four_Bit_Register R6(Q[17:15], KEY, SW, Q[20:18]);
+	Four_Bit_Register R7(Q[20:18], KEY, SW, Q[23:21]);
+	
+	
+	HexHELO H0(HEX0, Q[2:0]);
+	HexHELO H1(HEX1, Q[5:3]);
+	HexHELO H2(HEX2, Q[8:6]);
+	HexHELO H3(HEX3, Q[11:9]);
+	HexHELO H4(HEX4, Q[14:12]);
+	HexHELO H5(HEX5, Q[17:15]);
+	HexHELO H6(HEX6, Q[20:18]);
+	HexHELO H7(HEX7, Q[23:21]);
+
+
+endmodule

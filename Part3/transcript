@@ -1,0 +1,98 @@
+# Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
+do Four_bit_Reg.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:31:53 on May 14,2018
+# vlog -reportprogress 300 ./Four_Bit_Register.sv 
+# -- Compiling module Four_Bit_Register
+# -- Compiling module Four_Bit_Register_testbench
+# 
+# Top level modules:
+# 	Four_Bit_Register_testbench
+# End time: 17:31:53 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 17:31:53 on May 14,2018
+# vlog -reportprogress 300 ./D_flip_flop.sv 
+# -- Compiling module D_flip_flop
+# -- Compiling module D_flip_flop_testbench
+# 
+# Top level modules:
+# 	D_flip_flop_testbench
+# End time: 17:31:53 on May 14,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" -t 1ps -lib work Four_Bit_Register_testbench 
+# Start time: 17:31:53 on May 14,2018
+# Loading sv_std.std
+# Loading work.Four_Bit_Register_testbench
+# Loading work.Four_Bit_Register
+# Loading work.D_flip_flop
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0000
+# 0001
+# 0010
+# 0011
+# 0100
+# 0101
+# 0110
+# 0111
+# 0000
+# 0001
+# 0010
+# 0011
+# 0100
+# 0101
+# 0110
+# 0111
+# 0000
+# 0001
+# 0010
+# 0011
+# 0100
+# 0101
+# 0110
+# 0111
+# 0000
+# 0001
+# 0010
+# 0011
+# 0100
+# 0101
+# 0110
+# 0111
+# 0111
+# End time: 17:37:25 on May 14,2018, Elapsed time: 0:05:32
+# Errors: 0, Warnings: 0

@@ -1,0 +1,100 @@
+|Part2
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+HEX0[6] << HexHEXI:HexDecoder.port0
+HEX0[5] << HexHEXI:HexDecoder.port0
+HEX0[4] << HexHEXI:HexDecoder.port0
+HEX0[3] << HexHEXI:HexDecoder.port0
+HEX0[2] << HexHEXI:HexDecoder.port0
+HEX0[1] << HexHEXI:HexDecoder.port0
+HEX0[0] << HexHEXI:HexDecoder.port0
+LEDR[0] << SW[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << SW[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << SW[2].DB_MAX_OUTPUT_PORT_TYPE
+KEY[0] => KEY[0].IN1
+
+
+|Part2|Mod_Ten_Counter:SirCountsAlot
+w1 => always0.IN0
+w1 => always0.IN0
+w1 => always0.IN0
+w0 => always0.IN1
+w0 => always0.IN1
+w0 => always0.IN1
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => CurrentState.OUTPUTSELECT
+Reset => z.OUTPUTSELECT
+Reset => z.OUTPUTSELECT
+Reset => z.OUTPUTSELECT
+Reset => z.OUTPUTSELECT
+Clock => z[0]~reg0.CLK
+Clock => z[1]~reg0.CLK
+Clock => z[2]~reg0.CLK
+Clock => z[3]~reg0.CLK
+Clock => CurrentState~1.DATAIN
+z[0] <= z[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+z[1] <= z[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+z[2] <= z[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+z[3] <= z[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part2|HexHEXI:HexDecoder
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[0] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[2] => Hex.IN0
+S[2] => Hex.IN0
+S[2] => Hex.IN1
+S[2] => Hex.IN0
+S[2] => Hex.IN0
+S[2] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+S[3] => Hex.IN1
+
+

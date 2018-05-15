@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at Part3FSM.sv(22): always construct contains both blocking and non-blocking assignments File: C:/UWT/TCES330/labs/HW4/Part3/Part3FSM.sv Line: 22

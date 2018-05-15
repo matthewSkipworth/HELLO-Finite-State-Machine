@@ -1,0 +1,58 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/UWT/TCES330/labs/HW4/Part2
+vMod_Ten_Counter
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1526063791
+!i10b 1
+!s100 TNM3HJm]9aiMOJ8:PN@nc1
+IMKE`bYeami>?6KGX5PBP`2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 Mod_Ten_Counter_sv_unit
+S1
+R0
+Z5 w1526063787
+Z6 8./Mod_Ten_Counter.sv
+Z7 F./Mod_Ten_Counter.sv
+L0 5
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1526063791.000000
+Z10 !s107 ./Mod_Ten_Counter.sv|
+Z11 !s90 -reportprogress|300|./Mod_Ten_Counter.sv|
+!i113 1
+Z12 tCvgOpt 0
+n@mod_@ten_@counter
+vMod_Ten_Counter_testbench
+R1
+R2
+!i10b 1
+!s100 kUH:=RHDaDT;a=R>T^TDK1
+IhKLki`fJiJPJd0Jzg:Ub=0
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 84
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+n@mod_@ten_@counter_testbench

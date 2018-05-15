@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'bfg3000'
+Slack : 16.728
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'bfg3000'
+Slack : 0.440
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'bfg3000'
+Slack : 9.728
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'bfg3000'
+Slack : 16.920
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'bfg3000'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'bfg3000'
+Slack : 9.732
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'bfg3000'
+Slack : 17.900
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'bfg3000'
+Slack : 0.201
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'bfg3000'
+Slack : 9.329
+TNS   : 0.000
+
+------------------------------------------------------------

@@ -1,0 +1,13 @@
+
+State Machine - |Part2|Mod_Ten_Counter:SirCountsAlot|CurrentState
+Name CurrentState.J CurrentState.I CurrentState.H CurrentState.G CurrentState.F CurrentState.E CurrentState.D CurrentState.C CurrentState.B CurrentState.A 
+CurrentState.A 0 0 0 0 0 0 0 0 0 0 
+CurrentState.B 0 0 0 0 0 0 0 0 1 1 
+CurrentState.C 0 0 0 0 0 0 0 1 0 1 
+CurrentState.D 0 0 0 0 0 0 1 0 0 1 
+CurrentState.E 0 0 0 0 0 1 0 0 0 1 
+CurrentState.F 0 0 0 0 1 0 0 0 0 1 
+CurrentState.G 0 0 0 1 0 0 0 0 0 1 
+CurrentState.H 0 0 1 0 0 0 0 0 0 1 
+CurrentState.I 0 1 0 0 0 0 0 0 0 1 
+CurrentState.J 1 0 0 0 0 0 0 0 0 1 

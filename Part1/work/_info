@@ -1,0 +1,106 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/UWT/TCES330/labs/HW4/Part1
+vPart1FSM
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1525980005
+!i10b 1
+!s100 <CciWea>KXz4O1omo^BLB0
+IgnT0mF=mfPGF71HK];YP>3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 Part1FSM_sv_unit
+S1
+R0
+Z5 w1525980001
+Z6 8./Part1FSM.sv
+Z7 F./Part1FSM.sv
+L0 4
+Z8 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z9 !s108 1525980005.000000
+Z10 !s107 ./Part1FSM.sv|
+Z11 !s90 -reportprogress|300|./Part1FSM.sv|
+!i113 1
+Z12 tCvgOpt 0
+n@part1@f@s@m
+vPart1FSM_testbench
+R1
+R2
+!i10b 1
+!s100 mUl^6`=^_3^2D]ga8dDm=1
+I3=ML<oLhB1eGi5ELH<YTe1
+R3
+R4
+S1
+R0
+R5
+R6
+R7
+L0 81
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+n@part1@f@s@m_testbench
+vTestTFF
+R1
+R2
+!i10b 1
+!s100 _a8eh@QOWC=B>5i6S2c[h0
+I4RkimW6LCi^8a@Qn]=8Hj1
+R3
+Z13 !s105 TestTFF_sv_unit
+S1
+R0
+Z14 w1525314714
+Z15 8./TestTFF.sv
+Z16 F./TestTFF.sv
+L0 11
+R8
+r1
+!s85 0
+31
+R9
+Z17 !s107 ./TestTFF.sv|
+Z18 !s90 -reportprogress|300|./TestTFF.sv|
+!i113 1
+R12
+n@test@t@f@f
+vTestTFF_testbench
+R1
+R2
+!i10b 1
+!s100 6ki92g2Edo>H[65U6J3WT3
+In_@NSNb>>_HbkcdmU_5KK1
+R3
+R13
+S1
+R0
+R14
+R15
+R16
+L0 68
+R8
+r1
+!s85 0
+31
+R9
+R17
+R18
+!i113 1
+R12
+n@test@t@f@f_testbench

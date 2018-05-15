@@ -1,0 +1,602 @@
+|Part4
+CLOCK_50 => CLOCK_50.IN1
+KEY[0] => KEY[0].IN9
+HEX0[6] << New_Hex_HELO:H0.port0
+HEX0[5] << New_Hex_HELO:H0.port0
+HEX0[4] << New_Hex_HELO:H0.port0
+HEX0[3] << New_Hex_HELO:H0.port0
+HEX0[2] << New_Hex_HELO:H0.port0
+HEX0[1] << New_Hex_HELO:H0.port0
+HEX0[0] << New_Hex_HELO:H0.port0
+HEX1[6] << New_Hex_HELO:H1.port0
+HEX1[5] << New_Hex_HELO:H1.port0
+HEX1[4] << New_Hex_HELO:H1.port0
+HEX1[3] << New_Hex_HELO:H1.port0
+HEX1[2] << New_Hex_HELO:H1.port0
+HEX1[1] << New_Hex_HELO:H1.port0
+HEX1[0] << New_Hex_HELO:H1.port0
+HEX2[6] << New_Hex_HELO:H2.port0
+HEX2[5] << New_Hex_HELO:H2.port0
+HEX2[4] << New_Hex_HELO:H2.port0
+HEX2[3] << New_Hex_HELO:H2.port0
+HEX2[2] << New_Hex_HELO:H2.port0
+HEX2[1] << New_Hex_HELO:H2.port0
+HEX2[0] << New_Hex_HELO:H2.port0
+HEX3[6] << New_Hex_HELO:H3.port0
+HEX3[5] << New_Hex_HELO:H3.port0
+HEX3[4] << New_Hex_HELO:H3.port0
+HEX3[3] << New_Hex_HELO:H3.port0
+HEX3[2] << New_Hex_HELO:H3.port0
+HEX3[1] << New_Hex_HELO:H3.port0
+HEX3[0] << New_Hex_HELO:H3.port0
+HEX4[6] << New_Hex_HELO:H4.port0
+HEX4[5] << New_Hex_HELO:H4.port0
+HEX4[4] << New_Hex_HELO:H4.port0
+HEX4[3] << New_Hex_HELO:H4.port0
+HEX4[2] << New_Hex_HELO:H4.port0
+HEX4[1] << New_Hex_HELO:H4.port0
+HEX4[0] << New_Hex_HELO:H4.port0
+HEX5[6] << New_Hex_HELO:H5.port0
+HEX5[5] << New_Hex_HELO:H5.port0
+HEX5[4] << New_Hex_HELO:H5.port0
+HEX5[3] << New_Hex_HELO:H5.port0
+HEX5[2] << New_Hex_HELO:H5.port0
+HEX5[1] << New_Hex_HELO:H5.port0
+HEX5[0] << New_Hex_HELO:H5.port0
+HEX6[6] << New_Hex_HELO:H6.port0
+HEX6[5] << New_Hex_HELO:H6.port0
+HEX6[4] << New_Hex_HELO:H6.port0
+HEX6[3] << New_Hex_HELO:H6.port0
+HEX6[2] << New_Hex_HELO:H6.port0
+HEX6[1] << New_Hex_HELO:H6.port0
+HEX6[0] << New_Hex_HELO:H6.port0
+HEX7[6] << New_Hex_HELO:H7.port0
+HEX7[5] << New_Hex_HELO:H7.port0
+HEX7[4] << New_Hex_HELO:H7.port0
+HEX7[3] << New_Hex_HELO:H7.port0
+HEX7[2] << New_Hex_HELO:H7.port0
+HEX7[1] << New_Hex_HELO:H7.port0
+HEX7[0] << New_Hex_HELO:H7.port0
+
+
+|Part4|KHzCLock:clock1
+Clock => Out~reg0.CLK
+Clock => Q[0].CLK
+Clock => Q[1].CLK
+Clock => Q[2].CLK
+Clock => Q[3].CLK
+Clock => Q[4].CLK
+Clock => Q[5].CLK
+Clock => Q[6].CLK
+Clock => Q[7].CLK
+Clock => Q[8].CLK
+Clock => Q[9].CLK
+Clock => Q[10].CLK
+Clock => Q[11].CLK
+Clock => Q[12].CLK
+Clock => Q[13].CLK
+Clock => Q[14].CLK
+Clock => Q[15].CLK
+Clock => Q[16].CLK
+Clock => Q[17].CLK
+Clock => Q[18].CLK
+Clock => Q[19].CLK
+Clock => Q[20].CLK
+Clock => Q[21].CLK
+Clock => Q[22].CLK
+Clock => Q[23].CLK
+Clock => Q[24].CLK
+Clock => Q[25].CLK
+Clock => Q[26].CLK
+Clock => Q[27].CLK
+Clock => Q[28].CLK
+Clock => Q[29].CLK
+Out <= Out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Part3FSM:FSM1
+Clock => counter[0].CLK
+Clock => counter[1].CLK
+Clock => counter[2].CLK
+Clock => counter[3].CLK
+Clock => Out[0]~reg0.CLK
+Clock => Out[1]~reg0.CLK
+Clock => Out[2]~reg0.CLK
+Clock => currentState[0].CLK
+Clock => currentState[1].CLK
+Clock => currentState[2].CLK
+Reset => currentState.OUTPUTSELECT
+Reset => currentState.OUTPUTSELECT
+Reset => currentState.OUTPUTSELECT
+Reset => Out.OUTPUTSELECT
+Reset => Out.OUTPUTSELECT
+Reset => Out.OUTPUTSELECT
+Reset => counter.OUTPUTSELECT
+Reset => counter.OUTPUTSELECT
+Reset => counter.OUTPUTSELECT
+Reset => counter.OUTPUTSELECT
+Out[0] <= Out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Out[1] <= Out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Out[2] <= Out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R0
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R0|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R0|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R0|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R1
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R1|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R1|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R1|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R2
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R2|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R2|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R2|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R3
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R3|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R3|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R3|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R4
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R4|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R4|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R4|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R5
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R5|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R5|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R5|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R6
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R6|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R6|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R6|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R7
+T[0] => T[0].IN1
+T[1] => T[1].IN1
+T[2] => T[2].IN1
+Clk => Clk.IN3
+ClrN => ClrN.IN3
+Q[0] <= D_flip_flop:D0.port3
+Q[1] <= D_flip_flop:D1.port3
+Q[2] <= D_flip_flop:D2.port3
+
+
+|Part4|Four_Bit_Register:R7|D_flip_flop:D0
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R7|D_flip_flop:D1
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|Four_Bit_Register:R7|D_flip_flop:D2
+enable => q.DATAB
+clk => q~reg0.CLK
+reset => q.OUTPUTSELECT
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Part4|New_Hex_HELO:H0
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H1
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H2
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H3
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H4
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H5
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H6
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
+|Part4|New_Hex_HELO:H7
+Hex[6] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[5] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[4] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[3] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[2] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[1] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+Hex[0] <= Hex.DB_MAX_OUTPUT_PORT_TYPE
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN0
+S[0] => Hex.IN1
+S[0] => Hex.IN0
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[1] => Hex.IN0
+S[1] => Hex.IN1
+S[1] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+S[2] => Hex.IN1
+
+
