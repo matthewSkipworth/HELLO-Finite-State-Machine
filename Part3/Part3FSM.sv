@@ -7,7 +7,7 @@ module Part3FSM(Clock, Reset, Out);
 	input Clock, Reset;
 	output logic [2:0] Out = 3'b111;
 	
-	logic [2:0] currentState = 3'b111, nextState = 3'b111;
+	logic [2:0] currentState, nextState;
 	logic enable, q, counter_reset;
 	
 	logic [3:0] counter;
@@ -23,16 +23,21 @@ module Part3FSM(Clock, Reset, Out);
 				O = 3'b011; */
 				
 	always_comb begin
-		case(counter)
+		case(currentState)
 		
-		0: nextState = H;
-		1: nextState = E;
-		2: nextState = L;
-		3: nextState = L;
-		4: nextState = O;
-		5: nextState = Blank;
-		6: nextState = Blank;
-		7: nextState = Blank;
+		//Blank: nextState = H;
+		H: nextState = E;
+		E: nextState = L;
+		   //counter = 0;
+		L: 
+			if (counter != 3) nextState = O;
+			else nextState = L;
+			
+		O: nextState = Blank;
+			//counter = 0;
+		Blank: 
+			if (counter !=0 ) nextState = Blank;
+			else nextState = H;
 		
 		default: nextState = Blank;
 		
@@ -46,13 +51,20 @@ module Part3FSM(Clock, Reset, Out);
 			counter <= 0;
 		end else begin
 			if (counter < 7) begin
-				currentState <= nextState; 
+				//if ( (currentState == E) || (currentState == O) || counter == 7)begin 
+					//counter <= 0;
+		//		currentState <= nextState;
+		//	end else begin
+				currentState <= nextState;
+			   //end else begin
 				counter <= counter + 1;
-				Out <= currentState;
+			//	Out <= currentState;
 			end else begin
 				counter <= 0;
 				currentState <= nextState;
+				//Out <= currentState;
 			end
+			Out <= currentState;
 		end
 	end
 		

@@ -1,0 +1,8 @@
+
+State Machine - |Part3|Part3FSM:FSM1|currentState
+Name currentState~4 currentState~3 currentState~2 
+currentState.Blank 0 0 0 
+currentState.H 0 0 1 
+currentState.E 0 1 0 
+currentState.L 0 1 1 
+currentState.O 1 0 0 

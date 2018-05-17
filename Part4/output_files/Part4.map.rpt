@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Part4
-Tue May 15 11:36:47 2018
+Tue May 15 23:36:13 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -13,14 +13,15 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: KHzCLock:clock1
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  8. State Machine - |Part4|Part3FSM:FSM1|currentState
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: KHzCLock:clock1
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -47,13 +48,13 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 15 11:36:47 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 15 23:36:13 2018       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; Part4                                       ;
 ; Top-level Entity Name              ; Part4                                       ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 126                                         ;
-;     Total combinational functions  ; 126                                         ;
+; Total logic elements               ; 128                                         ;
+;     Total combinational functions  ; 128                                         ;
 ;     Dedicated logic registers      ; 64                                          ;
 ; Total registers                    ; 64                                          ;
 ; Total pins                         ; 58                                          ;
@@ -72,6 +73,7 @@ agreement for further details.
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                                      ; Part4              ; Part4              ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; State Machine Processing                                                   ; User-Encoded       ; Auto               ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -81,7 +83,6 @@ agreement for further details.
 ; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
 ; Safe State Machine                                                         ; Off                ; Off                ;
 ; Extract Verilog State Machines                                             ; On                 ; On                 ;
 ; Extract VHDL State Machines                                                ; On                 ; On                 ;
@@ -181,36 +182,36 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 126          ;
-;                                             ;              ;
-; Total combinational functions               ; 126          ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 14           ;
-;     -- 3 input functions                    ; 42           ;
-;     -- <=2 input functions                  ; 70           ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 97           ;
-;     -- arithmetic mode                      ; 29           ;
-;                                             ;              ;
-; Total registers                             ; 64           ;
-;     -- Dedicated logic registers            ; 64           ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 58           ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; KEY[0]~input ;
-; Maximum fan-out                             ; 34           ;
-; Total fan-out                               ; 566          ;
-; Average fan-out                             ; 1.85         ;
-+---------------------------------------------+--------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 128                 ;
+;                                             ;                     ;
+; Total combinational functions               ; 128                 ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 15                  ;
+;     -- 3 input functions                    ; 42                  ;
+;     -- <=2 input functions                  ; 71                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 99                  ;
+;     -- arithmetic mode                      ; 29                  ;
+;                                             ;                     ;
+; Total registers                             ; 64                  ;
+;     -- Dedicated logic registers            ; 64                  ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 58                  ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; KHzCLock:clock1|Out ;
+; Maximum fan-out                             ; 33                  ;
+; Total fan-out                               ; 570                 ;
+; Average fan-out                             ; 1.85                ;
++---------------------------------------------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -218,7 +219,7 @@ agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Entity Name       ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
-; |Part4                     ; 126 (0)             ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |Part4                                     ; Part4             ; work         ;
+; |Part4                     ; 128 (0)             ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 58   ; 0            ; |Part4                                     ; Part4             ; work         ;
 ;    |Four_Bit_Register:R0|  ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|Four_Bit_Register:R0                ; Four_Bit_Register ; work         ;
 ;       |D_flip_flop:D0|     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|Four_Bit_Register:R0|D_flip_flop:D0 ; D_flip_flop       ; work         ;
 ;       |D_flip_flop:D1|     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|Four_Bit_Register:R0|D_flip_flop:D1 ; D_flip_flop       ; work         ;
@@ -260,9 +261,23 @@ agreement for further details.
 ;    |New_Hex_HELO:H5|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|New_Hex_HELO:H5                     ; New_Hex_HELO      ; work         ;
 ;    |New_Hex_HELO:H6|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|New_Hex_HELO:H6                     ; New_Hex_HELO      ; work         ;
 ;    |New_Hex_HELO:H7|       ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|New_Hex_HELO:H7                     ; New_Hex_HELO      ; work         ;
-;    |Part3FSM:FSM1|         ; 10 (10)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|Part3FSM:FSM1                       ; Part3FSM          ; work         ;
+;    |Part3FSM:FSM1|         ; 12 (12)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Part4|Part3FSM:FSM1                       ; Part3FSM          ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  User-Encoded
++-----------------------------------------------------------------------+
+; State Machine - |Part4|Part3FSM:FSM1|currentState                     ;
++--------------------+----------------+----------------+----------------+
+; Name               ; currentState~4 ; currentState~3 ; currentState~2 ;
++--------------------+----------------+----------------+----------------+
+; currentState.Blank ; 0              ; 0              ; 0              ;
+; currentState.H     ; 0              ; 0              ; 1              ;
+; currentState.E     ; 0              ; 1              ; 0              ;
+; currentState.L     ; 0              ; 1              ; 1              ;
+; currentState.O     ; 1              ; 0              ; 0              ;
++--------------------+----------------+----------------+----------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -281,11 +296,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 64    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 1     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -298,10 +313,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Part3FSM:FSM1|Out[2]                   ; 1       ;
 ; Part3FSM:FSM1|Out[0]                   ; 1       ;
 ; Part3FSM:FSM1|Out[1]                   ; 1       ;
-; Part3FSM:FSM1|currentState[2]          ; 1       ;
-; Part3FSM:FSM1|currentState[0]          ; 1       ;
-; Part3FSM:FSM1|currentState[1]          ; 1       ;
-; Total number of inverted registers = 6 ;         ;
+; Total number of inverted registers = 3 ;         ;
 +----------------------------------------+---------+
 
 
@@ -311,7 +323,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |Part4|Part3FSM:FSM1|counter[3] ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |Part4|Part3FSM:FSM1|Out[2]     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------+
 
 
@@ -332,19 +343,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 58                          ;
 ; cycloneiii_ff         ; 64                          ;
-;     ENA               ; 3                           ;
-;     plain             ; 61                          ;
-; cycloneiii_lcell_comb ; 126                         ;
+;     SCLR              ; 1                           ;
+;     plain             ; 63                          ;
+; cycloneiii_lcell_comb ; 128                         ;
 ;     arith             ; 29                          ;
 ;         2 data inputs ; 29                          ;
-;     normal            ; 97                          ;
+;     normal            ; 99                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 40                          ;
+;         2 data inputs ; 41                          ;
 ;         3 data inputs ; 42                          ;
-;         4 data inputs ; 14                          ;
+;         4 data inputs ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.50                        ;
-; Average LUT depth     ; 2.36                        ;
+; Average LUT depth     ; 2.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -363,17 +374,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 15 11:36:30 2018
+    Info: Processing started: Tue May 15 23:35:54 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Part4 -c Part4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file new_hex_helo.sv
     Info (12023): Found entity 1: New_Hex_HELO File: C:/UWT/TCES330/labs/HW4/Part4/New_Hex_HELO.sv Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file part4.sv
-    Info (12023): Found entity 1: Part4 File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 5
+    Info (12023): Found entity 1: Part4 File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 7
 Info (12021): Found 2 design units, including 2 entities, in source file part3fsm.sv
     Info (12023): Found entity 1: Part3FSM File: C:/UWT/TCES330/labs/HW4/Part4/Part3FSM.sv Line: 5
-    Info (12023): Found entity 2: Part3FSM_testbench File: C:/UWT/TCES330/labs/HW4/Part4/Part3FSM.sv Line: 61
+    Info (12023): Found entity 2: Part3FSM_testbench File: C:/UWT/TCES330/labs/HW4/Part4/Part3FSM.sv Line: 73
 Info (12021): Found 2 design units, including 2 entities, in source file khzclock.sv
     Info (12023): Found entity 1: KHzCLock File: C:/UWT/TCES330/labs/HW4/Part4/KHzCLock.sv Line: 6
     Info (12023): Found entity 2: KHzCLock_testbench File: C:/UWT/TCES330/labs/HW4/Part4/KHzCLock.sv Line: 36
@@ -384,23 +395,23 @@ Info (12021): Found 2 design units, including 2 entities, in source file d_flip_
     Info (12023): Found entity 1: D_flip_flop File: C:/UWT/TCES330/labs/HW4/Part4/D_flip_flop.sv Line: 5
     Info (12023): Found entity 2: D_flip_flop_testbench File: C:/UWT/TCES330/labs/HW4/Part4/D_flip_flop.sv Line: 18
 Info (12127): Elaborating entity "Part4" for the top level hierarchy
-Info (12128): Elaborating entity "KHzCLock" for hierarchy "KHzCLock:clock1" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 15
-Info (12128): Elaborating entity "Part3FSM" for hierarchy "Part3FSM:FSM1" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 18
-Warning (10230): Verilog HDL assignment warning at Part3FSM.sv(50): truncated value with size 32 to match size of target (4) File: C:/UWT/TCES330/labs/HW4/Part4/Part3FSM.sv Line: 50
-Info (12128): Elaborating entity "Four_Bit_Register" for hierarchy "Four_Bit_Register:R0" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 20
+Info (12128): Elaborating entity "KHzCLock" for hierarchy "KHzCLock:clock1" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 17
+Info (12128): Elaborating entity "Part3FSM" for hierarchy "Part3FSM:FSM1" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at Part3FSM.sv(60): truncated value with size 32 to match size of target (4) File: C:/UWT/TCES330/labs/HW4/Part4/Part3FSM.sv Line: 60
+Info (12128): Elaborating entity "Four_Bit_Register" for hierarchy "Four_Bit_Register:R0" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 22
 Info (12128): Elaborating entity "D_flip_flop" for hierarchy "Four_Bit_Register:R0|D_flip_flop:D0" File: C:/UWT/TCES330/labs/HW4/Part4/Four_Bit_Register.sv Line: 13
-Info (12128): Elaborating entity "New_Hex_HELO" for hierarchy "New_Hex_HELO:H0" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 30
+Info (12128): Elaborating entity "New_Hex_HELO" for hierarchy "New_Hex_HELO:H0" File: C:/UWT/TCES330/labs/HW4/Part4/Part4.sv Line: 32
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 185 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 188 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 127 logic cells
+    Info (21061): Implemented 130 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 698 megabytes
-    Info: Processing ended: Tue May 15 11:36:47 2018
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:36
+    Info: Processing ended: Tue May 15 23:36:13 2018
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:40
 
 

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Part3
-Tue May 15 11:16:47 2018
+Tue May 15 22:04:14 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -107,7 +107,7 @@ agreement for further details.
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.9%      ;
 ;     Processor 3            ;   0.7%      ;
-;     Processor 4            ;   0.6%      ;
+;     Processor 4            ;   0.5%      ;
 +----------------------------+-------------+
 
 
@@ -116,7 +116,7 @@ agreement for further details.
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; Part3.out.sdc ; OK     ; Tue May 15 11:16:46 2018 ;
+; Part3.out.sdc ; OK     ; Tue May 15 22:04:12 2018 ;
 +---------------+--------+--------------------------+
 
 
@@ -134,7 +134,7 @@ agreement for further details.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 305.62 MHz ; 250.0 MHz       ; bfg3000    ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 279.49 MHz ; 250.0 MHz       ; bfg3000    ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -150,7 +150,7 @@ HTML report is unavailable in plain text report export.
 +---------+--------+------------------+
 ; Clock   ; Slack  ; End Point TNS    ;
 +---------+--------+------------------+
-; bfg3000 ; 16.728 ; 0.000            ;
+; bfg3000 ; 16.422 ; 0.000            ;
 +---------+--------+------------------+
 
 
@@ -180,7 +180,7 @@ No paths to report.
 +---------+-------+---------------------------------+
 ; Clock   ; Slack ; End Point TNS                   ;
 +---------+-------+---------------------------------+
-; bfg3000 ; 9.728 ; 0.000                           ;
+; bfg3000 ; 9.761 ; 0.000                           ;
 +---------+-------+---------------------------------+
 
 
@@ -189,57 +189,55 @@ No paths to report.
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 16.728 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.202      ;
-; 16.728 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.202      ;
-; 16.728 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.202      ;
-; 16.857 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.132     ; 2.029      ;
-; 16.873 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.132     ; 2.013      ;
-; 16.901 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.029      ;
-; 16.901 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.029      ;
-; 16.901 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 2.029      ;
-; 16.953 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.011     ; 2.054      ;
-; 16.972 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.011     ; 2.035      ;
-; 16.986 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.132     ; 1.900      ;
-; 17.031 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 1.899      ;
-; 17.031 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 1.899      ;
-; 17.031 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 1.899      ;
-; 17.073 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.011     ; 1.934      ;
-; 17.368 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.668      ; 2.318      ;
-; 17.474 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.668      ; 2.212      ;
-; 17.477 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.668      ; 2.209      ;
-; 17.766 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.203      ;
-; 17.766 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.203      ;
-; 17.805 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.048     ; 1.165      ;
-; 17.829 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.140      ;
-; 17.840 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.131      ;
-; 17.841 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.128      ;
-; 17.843 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.126      ;
-; 17.843 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.128      ;
-; 17.851 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.120      ;
-; 17.852 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.119      ;
-; 17.860 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 1.070      ;
-; 17.867 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 1.063      ;
-; 17.874 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.095      ;
-; 17.881 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.088      ;
-; 17.881 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.088      ;
-; 17.884 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.087      ;
-; 17.885 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.086      ;
-; 17.953 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.048     ; 1.017      ;
-; 17.961 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.010      ;
-; 17.968 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 1.001      ;
-; 17.976 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.088     ; 0.954      ;
-; 18.003 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.966      ;
-; 18.003 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.966      ;
-; 18.078 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.915      ;
-; 18.079 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.914      ;
-; 18.079 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.914      ;
-; 18.104 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.865      ;
-; 18.138 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.831      ;
-; 18.148 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.821      ;
-; 18.148 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.049     ; 0.821      ;
+; 16.422 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 2.549      ;
+; 16.572 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 2.399      ;
+; 16.856 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 2.115      ;
+; 16.896 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.098     ; 2.024      ;
+; 16.911 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 2.060      ;
+; 16.918 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 2.053      ;
+; 16.931 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.032     ; 2.055      ;
+; 16.943 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.032     ; 2.043      ;
+; 16.964 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.032     ; 2.022      ;
+; 17.004 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.189     ; 1.825      ;
+; 17.018 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.043     ; 1.957      ;
+; 17.059 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.157     ; 1.802      ;
+; 17.297 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.674      ;
+; 17.321 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.650      ;
+; 17.321 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.650      ;
+; 17.324 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.032     ; 1.662      ;
+; 17.378 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.189     ; 1.451      ;
+; 17.396 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.076     ; 1.546      ;
+; 17.401 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.076     ; 1.541      ;
+; 17.421 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.025      ; 1.622      ;
+; 17.536 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.025      ; 1.507      ;
+; 17.544 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.427      ;
+; 17.553 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.025      ; 1.490      ;
+; 17.641 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.330      ;
+; 17.648 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.098     ; 1.272      ;
+; 17.658 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.098     ; 1.262      ;
+; 17.680 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.076     ; 1.262      ;
+; 17.689 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.282      ;
+; 17.747 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.224      ;
+; 17.847 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.124      ;
+; 17.864 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.107      ;
+; 17.875 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.096      ;
+; 17.875 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 1.093      ;
+; 17.876 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 1.092      ;
+; 17.882 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 1.086      ;
+; 17.883 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.088      ;
+; 17.892 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.079      ;
+; 17.892 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 1.079      ;
+; 17.993 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.975      ;
+; 18.044 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 0.927      ;
+; 18.045 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.047     ; 0.926      ;
+; 18.153 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.815      ;
+; 18.154 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.814      ;
+; 18.155 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.813      ;
+; 18.155 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.813      ;
+; 18.157 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.050     ; 0.811      ;
 ; 18.210 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.043     ; 0.765      ;
 ; 18.210 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.043     ; 0.765      ;
-; 18.210 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.043     ; 0.765      ;
+; 18.210 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.043     ; 0.765      ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -248,57 +246,55 @@ No paths to report.
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.440 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.043      ; 0.669      ;
+; 0.440 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.440 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.043      ; 0.669      ;
 ; 0.445 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.043      ; 0.674      ;
-; 0.475 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.710      ;
-; 0.482 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.717      ;
-; 0.482 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.717      ;
-; 0.493 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.728      ;
-; 0.538 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.088      ; 0.812      ;
-; 0.538 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.088      ; 0.812      ;
-; 0.539 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.088      ; 0.813      ;
-; 0.607 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.842      ;
-; 0.607 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.842      ;
-; 0.610 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.821      ;
-; 0.616 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.851      ;
-; 0.624 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.857      ;
-; 0.628 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.048      ; 0.862      ;
-; 0.691 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.926      ;
-; 0.692 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.903      ;
-; 0.693 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.926      ;
-; 0.693 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.928      ;
-; 0.693 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.928      ;
-; 0.694 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.927      ;
-; 0.694 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.905      ;
-; 0.704 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.939      ;
-; 0.709 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.944      ;
-; 0.710 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 0.945      ;
-; 0.711 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.944      ;
-; 0.711 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.944      ;
-; 0.713 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.946      ;
-; 0.713 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.048      ; 0.947      ;
-; 0.714 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.947      ;
-; 0.773 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 1.008      ;
-; 0.820 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.049      ; 1.055      ;
-; 0.962 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.863      ; 2.011      ;
-; 1.004 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.863      ; 2.053      ;
-; 1.092 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.863      ; 2.141      ;
-; 1.434 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.189      ; 1.809      ;
-; 1.482 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.189      ; 1.857      ;
-; 1.514 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.189      ; 1.889      ;
-; 1.521 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.071      ; 1.778      ;
-; 1.612 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.071      ; 1.869      ;
-; 1.620 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.071      ; 1.877      ;
-; 1.644 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.855      ;
-; 1.644 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.855      ;
-; 1.644 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.855      ;
-; 1.776 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.987      ;
-; 1.776 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.987      ;
-; 1.776 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 1.987      ;
-; 1.924 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 2.135      ;
-; 1.924 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 2.135      ;
-; 1.924 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 2.135      ;
+; 0.481 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.717      ;
+; 0.482 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.718      ;
+; 0.483 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.719      ;
+; 0.483 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.719      ;
+; 0.484 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.720      ;
+; 0.585 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.818      ;
+; 0.587 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.820      ;
+; 0.605 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.841      ;
+; 0.651 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.098      ; 0.935      ;
+; 0.682 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.032      ; 0.900      ;
+; 0.689 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.925      ;
+; 0.691 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.927      ;
+; 0.694 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.927      ;
+; 0.695 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.928      ;
+; 0.695 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.050      ; 0.931      ;
+; 0.698 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.931      ;
+; 0.698 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.931      ;
+; 0.708 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.941      ;
+; 0.762 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 0.995      ;
+; 0.861 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.094      ;
+; 0.889 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.032      ; 1.107      ;
+; 0.891 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.097      ; 1.174      ;
+; 0.911 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.032      ; 1.129      ;
+; 0.911 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.144      ;
+; 0.955 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.188      ;
+; 0.991 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.163      ; 1.340      ;
+; 1.020 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.163      ; 1.369      ;
+; 1.056 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.289      ;
+; 1.100 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.097      ; 1.383      ;
+; 1.102 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.097      ; 1.385      ;
+; 1.107 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.163      ; 1.456      ;
+; 1.164 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.020     ; 1.330      ;
+; 1.165 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.398      ;
+; 1.201 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.098      ; 1.485      ;
+; 1.244 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.477      ;
+; 1.298 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.531      ;
+; 1.420 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 1.620      ;
+; 1.444 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.098      ; 1.728      ;
+; 1.521 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.098      ; 1.805      ;
+; 1.557 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.020     ; 1.723      ;
+; 1.598 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.043      ; 1.827      ;
+; 1.607 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.840      ;
+; 1.614 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.847      ;
+; 1.630 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.863      ;
+; 1.699 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 1.932      ;
+; 2.097 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.047      ; 2.330      ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -313,7 +309,7 @@ No synchronizer chains to report.
 +------------+-----------------+------------+---------------------------------------------------------------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
 +------------+-----------------+------------+---------------------------------------------------------------+
-; 324.68 MHz ; 250.0 MHz       ; bfg3000    ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 298.33 MHz ; 250.0 MHz       ; bfg3000    ; limit due to minimum period restriction (max I/O toggle rate) ;
 +------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -323,7 +319,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+--------+-----------------+
 ; Clock   ; Slack  ; End Point TNS   ;
 +---------+--------+-----------------+
-; bfg3000 ; 16.920 ; 0.000           ;
+; bfg3000 ; 16.648 ; 0.000           ;
 +---------+--------+-----------------+
 
 
@@ -353,7 +349,7 @@ No paths to report.
 +---------+-------+--------------------------------+
 ; Clock   ; Slack ; End Point TNS                  ;
 +---------+-------+--------------------------------+
-; bfg3000 ; 9.732 ; 0.000                          ;
+; bfg3000 ; 9.738 ; 0.000                          ;
 +---------+-------+--------------------------------+
 
 
@@ -362,57 +358,55 @@ No paths to report.
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 16.920 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 2.018      ;
-; 16.920 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 2.018      ;
-; 16.920 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 2.018      ;
-; 17.033 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.124     ; 1.862      ;
-; 17.041 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.124     ; 1.854      ;
-; 17.066 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.872      ;
-; 17.066 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.872      ;
-; 17.066 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.872      ;
-; 17.091 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.018     ; 1.910      ;
-; 17.128 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.018     ; 1.873      ;
-; 17.152 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.124     ; 1.743      ;
-; 17.186 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.752      ;
-; 17.186 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.752      ;
-; 17.186 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 1.752      ;
-; 17.221 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.018     ; 1.780      ;
-; 17.544 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.620      ; 2.095      ;
-; 17.648 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.620      ; 1.991      ;
-; 17.654 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.620      ; 1.985      ;
-; 17.894 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.081      ;
-; 17.897 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.078      ;
-; 17.932 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.045     ; 1.042      ;
-; 17.949 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.026      ;
-; 17.960 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.015      ;
-; 17.966 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 1.011      ;
-; 17.966 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 1.007      ;
-; 17.968 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.007      ;
-; 17.971 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 1.002      ;
-; 17.974 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 1.003      ;
-; 17.979 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 0.959      ;
-; 17.985 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 0.953      ;
-; 17.993 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.982      ;
-; 17.999 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.976      ;
-; 17.999 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.974      ;
-; 18.000 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.975      ;
-; 18.000 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.973      ;
-; 18.060 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.045     ; 0.914      ;
-; 18.070 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.907      ;
-; 18.075 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.900      ;
-; 18.077 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.081     ; 0.861      ;
-; 18.097 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.878      ;
-; 18.097 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.878      ;
-; 18.163 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.021     ; 0.835      ;
-; 18.164 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.021     ; 0.834      ;
-; 18.164 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.021     ; 0.834      ;
-; 18.192 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.783      ;
-; 18.221 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.754      ;
-; 18.237 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.738      ;
-; 18.237 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.738      ;
-; 18.297 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 0.683      ;
-; 18.297 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 0.683      ;
+; 16.648 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 2.327      ;
+; 16.784 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 2.191      ;
+; 17.058 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.917      ;
+; 17.081 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.894      ;
+; 17.112 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.094     ; 1.813      ;
+; 17.114 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.861      ;
+; 17.156 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.029     ; 1.834      ;
+; 17.159 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.029     ; 1.831      ;
+; 17.177 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 1.803      ;
+; 17.185 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.029     ; 1.805      ;
+; 17.189 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.173     ; 1.657      ;
+; 17.243 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.141     ; 1.635      ;
+; 17.470 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.505      ;
+; 17.474 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.501      ;
+; 17.477 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.029     ; 1.513      ;
+; 17.482 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.493      ;
+; 17.545 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.173     ; 1.301      ;
+; 17.567 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.067     ; 1.385      ;
+; 17.572 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.067     ; 1.380      ;
+; 17.590 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.018      ; 1.447      ;
+; 17.668 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.307      ;
+; 17.685 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.018      ; 1.352      ;
+; 17.695 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.018      ; 1.342      ;
+; 17.776 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.199      ;
+; 17.783 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.094     ; 1.142      ;
+; 17.797 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.094     ; 1.128      ;
+; 17.807 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.067     ; 1.145      ;
+; 17.825 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.150      ;
+; 17.878 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.097      ;
+; 17.960 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 1.015      ;
+; 17.984 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.991      ;
+; 17.992 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.983      ;
+; 17.993 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.980      ;
+; 17.994 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.979      ;
+; 17.999 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.974      ;
+; 18.000 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.975      ;
+; 18.004 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.971      ;
+; 18.004 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.971      ;
+; 18.093 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.880      ;
+; 18.129 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.846      ;
+; 18.131 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.044     ; 0.844      ;
+; 18.240 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.733      ;
+; 18.240 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.733      ;
+; 18.241 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.732      ;
+; 18.242 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.731      ;
+; 18.243 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.046     ; 0.730      ;
 ; 18.297 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 0.683      ;
+; 18.297 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 0.683      ;
+; 18.297 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.039     ; 0.683      ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -422,56 +416,54 @@ No paths to report.
 ; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.387 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.597      ;
-; 0.387 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.597      ;
+; 0.387 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.597      ;
 ; 0.398 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.608      ;
-; 0.429 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.644      ;
-; 0.443 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.658      ;
-; 0.443 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.658      ;
-; 0.445 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.660      ;
-; 0.485 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.081      ; 0.737      ;
-; 0.485 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.081      ; 0.737      ;
-; 0.486 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.081      ; 0.738      ;
-; 0.549 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.764      ;
-; 0.549 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.764      ;
-; 0.560 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 0.752      ;
-; 0.563 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.778      ;
-; 0.570 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.783      ;
-; 0.573 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.789      ;
-; 0.630 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.847      ;
-; 0.631 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.848      ;
-; 0.631 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.846      ;
-; 0.633 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.848      ;
-; 0.633 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 0.825      ;
-; 0.634 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.849      ;
-; 0.636 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 0.828      ;
-; 0.642 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.857      ;
-; 0.643 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.860      ;
-; 0.644 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.861      ;
-; 0.646 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.861      ;
-; 0.647 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.862      ;
-; 0.647 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.863      ;
-; 0.650 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.863      ;
-; 0.650 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.863      ;
-; 0.703 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.918      ;
-; 0.742 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.957      ;
-; 0.895 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.800      ; 1.866      ;
-; 0.928 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.800      ; 1.899      ;
-; 0.984 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.800      ; 1.955      ;
-; 1.305 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.169      ; 1.645      ;
-; 1.333 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.169      ; 1.673      ;
-; 1.348 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.169      ; 1.688      ;
-; 1.380 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.064      ; 1.615      ;
-; 1.448 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.064      ; 1.683      ;
-; 1.459 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.064      ; 1.694      ;
-; 1.498 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.690      ;
-; 1.498 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.690      ;
-; 1.498 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.690      ;
-; 1.616 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.808      ;
-; 1.616 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.808      ;
-; 1.616 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.808      ;
-; 1.751 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.943      ;
-; 1.751 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.943      ;
-; 1.751 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.021      ; 1.943      ;
+; 0.441 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.658      ;
+; 0.442 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.659      ;
+; 0.443 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.660      ;
+; 0.444 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.661      ;
+; 0.444 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.661      ;
+; 0.527 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.742      ;
+; 0.529 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.744      ;
+; 0.553 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.770      ;
+; 0.596 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.094      ; 0.861      ;
+; 0.627 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.844      ;
+; 0.630 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.847      ;
+; 0.632 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.847      ;
+; 0.634 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.849      ;
+; 0.635 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.850      ;
+; 0.635 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.852      ;
+; 0.636 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.851      ;
+; 0.637 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.029      ; 0.837      ;
+; 0.645 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.860      ;
+; 0.706 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 0.921      ;
+; 0.798 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.013      ;
+; 0.812 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.092      ; 1.075      ;
+; 0.821 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.029      ; 1.021      ;
+; 0.825 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.040      ;
+; 0.843 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.029      ; 1.043      ;
+; 0.877 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.092      ;
+; 0.930 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.147      ; 1.248      ;
+; 0.950 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.147      ; 1.268      ;
+; 0.979 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.194      ;
+; 1.018 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.092      ; 1.281      ;
+; 1.018 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.092      ; 1.281      ;
+; 1.032 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.147      ; 1.350      ;
+; 1.066 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.281      ;
+; 1.079 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.017     ; 1.233      ;
+; 1.087 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.094      ; 1.352      ;
+; 1.139 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.354      ;
+; 1.178 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.393      ;
+; 1.279 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.016      ; 1.466      ;
+; 1.327 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.094      ; 1.592      ;
+; 1.393 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.094      ; 1.658      ;
+; 1.436 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.017     ; 1.590      ;
+; 1.448 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.663      ;
+; 1.456 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 1.666      ;
+; 1.498 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.713      ;
+; 1.500 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.715      ;
+; 1.545 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 1.760      ;
+; 1.886 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.044      ; 2.101      ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -486,7 +478,7 @@ No synchronizer chains to report.
 +---------+--------+-----------------+
 ; Clock   ; Slack  ; End Point TNS   ;
 +---------+--------+-----------------+
-; bfg3000 ; 17.900 ; 0.000           ;
+; bfg3000 ; 17.724 ; 0.000           ;
 +---------+--------+-----------------+
 
 
@@ -516,7 +508,7 @@ No paths to report.
 +---------+-------+--------------------------------+
 ; Clock   ; Slack ; End Point TNS                  ;
 +---------+-------+--------------------------------+
-; bfg3000 ; 9.329 ; 0.000                          ;
+; bfg3000 ; 9.390 ; 0.000                          ;
 +---------+-------+--------------------------------+
 
 
@@ -525,57 +517,55 @@ No paths to report.
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 17.900 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.062     ; 1.045      ;
-; 17.910 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.062     ; 1.035      ;
-; 17.934 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 1.031      ;
-; 17.934 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 1.031      ;
-; 17.934 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 1.031      ;
-; 17.939 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.007     ; 1.061      ;
-; 17.953 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.007     ; 1.047      ;
-; 17.964 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.062     ; 0.981      ;
-; 18.005 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.007     ; 0.995      ;
-; 18.029 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.936      ;
-; 18.029 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.936      ;
-; 18.029 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.936      ;
-; 18.087 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.878      ;
-; 18.087 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.878      ;
-; 18.087 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.878      ;
-; 18.122 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.349      ; 1.234      ;
-; 18.182 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.349      ; 1.174      ;
-; 18.192 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.349      ; 1.164      ;
-; 18.402 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.581      ;
-; 18.402 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.581      ;
-; 18.423 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.559      ;
-; 18.435 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.548      ;
-; 18.439 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.544      ;
-; 18.439 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.544      ;
-; 18.440 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.542      ;
-; 18.443 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.540      ;
-; 18.443 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.540      ;
-; 18.444 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.538      ;
-; 18.455 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.510      ;
-; 18.455 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.510      ;
-; 18.459 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.524      ;
-; 18.460 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.522      ;
-; 18.460 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.523      ;
-; 18.461 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.521      ;
-; 18.461 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.522      ;
-; 18.495 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.487      ;
-; 18.506 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.477      ;
-; 18.511 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.472      ;
-; 18.516 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.449      ;
-; 18.533 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.450      ;
-; 18.534 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.449      ;
-; 18.572 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.411      ;
-; 18.573 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.014     ; 0.420      ;
-; 18.575 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.014     ; 0.418      ;
-; 18.575 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.014     ; 0.418      ;
-; 18.594 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.389      ;
-; 18.594 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.389      ;
-; 18.596 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 20.000       ; -0.024     ; 0.387      ;
-; 18.626 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.359      ;
+; 17.724 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 1.260      ;
+; 17.860 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 1.124      ;
+; 17.946 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 1.038      ;
+; 17.979 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.045     ; 0.983      ;
+; 17.985 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.016     ; 1.006      ;
+; 17.995 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.016     ; 0.996      ;
+; 18.000 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.092     ; 0.915      ;
+; 18.007 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.106     ; 0.894      ;
+; 18.010 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.016     ; 0.981      ;
+; 18.012 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.972      ;
+; 18.025 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.959      ;
+; 18.051 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.934      ;
+; 18.173 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.106     ; 0.728      ;
+; 18.182 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.802      ;
+; 18.189 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.776      ;
+; 18.191 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.774      ;
+; 18.204 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.780      ;
+; 18.207 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.028      ; 0.828      ;
+; 18.210 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.016     ; 0.781      ;
+; 18.216 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.768      ;
+; 18.271 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.028      ; 0.764      ;
+; 18.285 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.699      ;
+; 18.285 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; 0.028      ; 0.750      ;
+; 18.331 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.042     ; 0.634      ;
+; 18.343 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.045     ; 0.619      ;
+; 18.346 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.045     ; 0.616      ;
+; 18.352 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.632      ;
+; 18.379 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.605      ;
+; 18.391 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.593      ;
+; 18.447 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.537      ;
+; 18.454 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.530      ;
+; 18.455 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.527      ;
+; 18.459 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.525      ;
+; 18.459 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.523      ;
+; 18.461 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.521      ;
+; 18.462 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.522      ;
+; 18.471 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.513      ;
+; 18.471 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.513      ;
+; 18.525 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.457      ;
+; 18.557 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.427      ;
+; 18.558 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 20.000       ; -0.023     ; 0.426      ;
+; 18.595 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.387      ;
+; 18.595 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.387      ;
+; 18.597 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.385      ;
+; 18.597 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.385      ;
+; 18.598 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 20.000       ; -0.025     ; 0.384      ;
+; 18.626 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.359      ;
 ; 18.626 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.359      ;
-; 18.626 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.359      ;
+; 18.626 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 20.000       ; -0.022     ; 0.359      ;
 +--------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -584,57 +574,55 @@ No paths to report.
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack ; From Node                             ; To Node                               ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.201 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.022      ; 0.307      ;
+; 0.201 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.208 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[0]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.022      ; 0.314      ;
-; 0.217 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.325      ;
-; 0.217 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.325      ;
-; 0.222 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.330      ;
-; 0.232 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.340      ;
-; 0.247 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.373      ;
-; 0.247 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.373      ;
-; 0.248 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.042      ; 0.374      ;
-; 0.277 ; Part3FSM:FSM1|currentState[1]         ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.375      ;
-; 0.282 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.390      ;
-; 0.283 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.391      ;
-; 0.284 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.392      ;
-; 0.286 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.394      ;
-; 0.291 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.400      ;
-; 0.316 ; Part3FSM:FSM1|currentState[2]         ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.414      ;
-; 0.317 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.426      ;
-; 0.317 ; Part3FSM:FSM1|currentState[0]         ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.415      ;
-; 0.318 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.427      ;
-; 0.319 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.427      ;
-; 0.319 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.427      ;
-; 0.319 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.427      ;
-; 0.327 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.436      ;
-; 0.327 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.435      ;
-; 0.329 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.438      ;
-; 0.329 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.437      ;
-; 0.331 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[2]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.439      ;
-; 0.331 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.440      ;
-; 0.332 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.440      ;
-; 0.332 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.440      ;
-; 0.365 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[0]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.473      ;
-; 0.388 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState[1]         ; bfg3000      ; bfg3000     ; 0.000        ; 0.024      ; 0.496      ;
-; 0.431 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.448      ; 0.963      ;
-; 0.445 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.448      ; 0.977      ;
-; 0.491 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.448      ; 1.023      ;
-; 0.658 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.093      ; 0.835      ;
-; 0.683 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.093      ; 0.860      ;
-; 0.696 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.093      ; 0.873      ;
-; 0.705 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.828      ;
-; 0.742 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.865      ;
-; 0.747 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.039      ; 0.870      ;
-; 0.789 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.887      ;
-; 0.789 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.887      ;
-; 0.789 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.887      ;
-; 0.849 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.947      ;
-; 0.849 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.947      ;
-; 0.849 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 0.947      ;
-; 0.918 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 1.016      ;
-; 0.918 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 1.016      ;
-; 0.918 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.014      ; 1.016      ;
+; 0.216 ; Four_Bit_Register:R3|D_flip_flop:D1|q ; Four_Bit_Register:R4|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.325      ;
+; 0.216 ; Four_Bit_Register:R2|D_flip_flop:D0|q ; Four_Bit_Register:R3|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.325      ;
+; 0.217 ; Four_Bit_Register:R5|D_flip_flop:D1|q ; Four_Bit_Register:R6|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.326      ;
+; 0.218 ; Four_Bit_Register:R4|D_flip_flop:D0|q ; Four_Bit_Register:R5|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.327      ;
+; 0.218 ; Four_Bit_Register:R3|D_flip_flop:D0|q ; Four_Bit_Register:R4|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.327      ;
+; 0.270 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.377      ;
+; 0.271 ; Part3FSM:FSM1|currentState~4          ; Part3FSM:FSM1|Out[2]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.378      ;
+; 0.276 ; Four_Bit_Register:R4|D_flip_flop:D1|q ; Four_Bit_Register:R5|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.385      ;
+; 0.296 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.425      ;
+; 0.306 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.016      ; 0.406      ;
+; 0.317 ; Four_Bit_Register:R3|D_flip_flop:D2|q ; Four_Bit_Register:R4|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.426      ;
+; 0.317 ; Four_Bit_Register:R2|D_flip_flop:D1|q ; Four_Bit_Register:R3|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.426      ;
+; 0.320 ; Four_Bit_Register:R6|D_flip_flop:D2|q ; Four_Bit_Register:R7|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.427      ;
+; 0.320 ; Part3FSM:FSM1|Out[2]                  ; Four_Bit_Register:R0|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.427      ;
+; 0.321 ; Four_Bit_Register:R2|D_flip_flop:D2|q ; Four_Bit_Register:R3|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.025      ; 0.430      ;
+; 0.321 ; Four_Bit_Register:R6|D_flip_flop:D0|q ; Four_Bit_Register:R7|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.428      ;
+; 0.321 ; Part3FSM:FSM1|Out[1]                  ; Four_Bit_Register:R0|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.428      ;
+; 0.329 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.436      ;
+; 0.339 ; Four_Bit_Register:R5|D_flip_flop:D2|q ; Four_Bit_Register:R6|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.446      ;
+; 0.388 ; Part3FSM:FSM1|Out[0]                  ; Four_Bit_Register:R0|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.495      ;
+; 0.404 ; Four_Bit_Register:R1|D_flip_flop:D1|q ; Four_Bit_Register:R2|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.534      ;
+; 0.406 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.016      ; 0.506      ;
+; 0.417 ; Part3FSM:FSM1|currentState~3          ; Part3FSM:FSM1|Out[1]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.016      ; 0.517      ;
+; 0.419 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.526      ;
+; 0.431 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.538      ;
+; 0.446 ; Four_Bit_Register:R0|D_flip_flop:D0|q ; Four_Bit_Register:R1|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.095      ; 0.625      ;
+; 0.460 ; Four_Bit_Register:R0|D_flip_flop:D1|q ; Four_Bit_Register:R1|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.095      ; 0.639      ;
+; 0.471 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[2]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.578      ;
+; 0.500 ; Four_Bit_Register:R0|D_flip_flop:D2|q ; Four_Bit_Register:R1|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.095      ; 0.679      ;
+; 0.508 ; Four_Bit_Register:R1|D_flip_flop:D2|q ; Four_Bit_Register:R2|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.638      ;
+; 0.509 ; Four_Bit_Register:R1|D_flip_flop:D0|q ; Four_Bit_Register:R2|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; 0.046      ; 0.639      ;
+; 0.534 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.641      ;
+; 0.552 ; Four_Bit_Register:R5|D_flip_flop:D0|q ; Four_Bit_Register:R6|D_flip_flop:D0|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.021     ; 0.615      ;
+; 0.563 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.670      ;
+; 0.564 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.693      ;
+; 0.614 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~4          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.721      ;
+; 0.654 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.783      ;
+; 0.668 ; Four_Bit_Register:R6|D_flip_flop:D1|q ; Four_Bit_Register:R7|D_flip_flop:D1|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.006     ; 0.746      ;
+; 0.684 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~3          ; bfg3000      ; bfg3000     ; 0.000        ; 0.045      ; 0.813      ;
+; 0.708 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|counter[1]              ; bfg3000      ; bfg3000     ; 0.000        ; 0.022      ; 0.814      ;
+; 0.718 ; Four_Bit_Register:R4|D_flip_flop:D2|q ; Four_Bit_Register:R5|D_flip_flop:D2|q ; bfg3000      ; bfg3000     ; 0.000        ; -0.021     ; 0.781      ;
+; 0.724 ; Part3FSM:FSM1|counter[1]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.831      ;
+; 0.754 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|Out[0]                  ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.861      ;
+; 0.768 ; Part3FSM:FSM1|counter[2]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.875      ;
+; 0.808 ; Part3FSM:FSM1|currentState~2          ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 0.915      ;
+; 0.929 ; Part3FSM:FSM1|counter[0]              ; Part3FSM:FSM1|currentState~2          ; bfg3000      ; bfg3000     ; 0.000        ; 0.023      ; 1.036      ;
 +-------+---------------------------------------+---------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -649,8 +637,8 @@ No synchronizer chains to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 16.728 ; 0.201 ; N/A      ; N/A     ; 9.329               ;
-;  bfg3000         ; 16.728 ; 0.201 ; N/A      ; N/A     ; 9.329               ;
+; Worst-case Slack ; 16.422 ; 0.201 ; N/A      ; N/A     ; 9.390               ;
+;  bfg3000         ; 16.422 ; 0.201 ; N/A      ; N/A     ; 9.390               ;
 ; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  bfg3000         ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+-------+----------+---------+---------------------+
@@ -938,7 +926,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; bfg3000    ; bfg3000  ; 51       ; 0        ; 0        ; 0        ;
+; bfg3000    ; bfg3000  ; 53       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -948,7 +936,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; bfg3000    ; bfg3000  ; 51       ; 0        ; 0        ; 0        ;
+; bfg3000    ; bfg3000  ; 53       ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1140,7 +1128,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 15 11:16:44 2018
+    Info: Processing started: Tue May 15 22:04:11 2018
 Info: Command: quartus_sta Part3 -c Part3
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -1150,57 +1138,57 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: 'Part3.out.sdc'
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
-Info (332146): Worst-case setup slack is 16.728
+Info (332146): Worst-case setup slack is 16.422
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    16.728               0.000 bfg3000 
+    Info (332119):    16.422               0.000 bfg3000 
 Info (332146): Worst-case hold slack is 0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.440               0.000 bfg3000 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 9.728
+Info (332146): Worst-case minimum pulse width slack is 9.761
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.728               0.000 bfg3000 
+    Info (332119):     9.761               0.000 bfg3000 
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332146): Worst-case setup slack is 16.920
+Info (332146): Worst-case setup slack is 16.648
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    16.920               0.000 bfg3000 
+    Info (332119):    16.648               0.000 bfg3000 
 Info (332146): Worst-case hold slack is 0.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.387               0.000 bfg3000 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 9.732
+Info (332146): Worst-case minimum pulse width slack is 9.738
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.732               0.000 bfg3000 
+    Info (332119):     9.738               0.000 bfg3000 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332146): Worst-case setup slack is 17.900
+Info (332146): Worst-case setup slack is 17.724
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.900               0.000 bfg3000 
+    Info (332119):    17.724               0.000 bfg3000 
 Info (332146): Worst-case hold slack is 0.201
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     0.201               0.000 bfg3000 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 9.329
+Info (332146): Worst-case minimum pulse width slack is 9.390
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.329               0.000 bfg3000 
+    Info (332119):     9.390               0.000 bfg3000 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 769 megabytes
-    Info: Processing ended: Tue May 15 11:16:47 2018
+    Info: Peak virtual memory: 770 megabytes
+    Info: Processing ended: Tue May 15 22:04:14 2018
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

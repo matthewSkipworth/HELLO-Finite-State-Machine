@@ -3,7 +3,7 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'oneheckuvaclock'
-Slack : 13.857
+Slack : 13.827
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'oneheckuvaclock'
@@ -15,7 +15,7 @@ Slack : 9.645
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'oneheckuvaclock'
-Slack : 14.356
+Slack : 14.324
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'oneheckuvaclock'
@@ -27,7 +27,7 @@ Slack : 9.636
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'oneheckuvaclock'
-Slack : 16.384
+Slack : 16.317
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'oneheckuvaclock'
